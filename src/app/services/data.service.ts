@@ -32,4 +32,10 @@ export class DataService {
     console.log(data)
     this.data$.next(data);
   }
+  searchCompanyStockData(data) {
+    return this.http
+      .post(this.url + '/stock', data)
+      .toPromise()
+      .catch()
+  }
 }

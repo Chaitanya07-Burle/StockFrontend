@@ -23,6 +23,7 @@
     "@popperjs/core": "^2.9.0",
     "@types/jquery": "^3.5.5",
     "bootstrap": "^5.0.0-beta2",
+    "chart.js": "^2.9.4",
     "jquery": "^3.6.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

@@ -1,23 +1,32 @@
-<div class="container-fluid">
-    <div class="form-group">
-        <label>Company name</label>
-        <input type="name" class="form-control">
-        <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
-    </div>
-    <button type="button" class="btn btn-warning" *ngIf="scan">Scan</button>
+    <form [formGroup]="stockForm">
+        <div class="d-flex justify-content-center marginTop">
+            <div class="form-group col-sm-4" style="padding-right: 5px;">
+                <label>Compay Name</label>
+                <input formControlName="CompanyName" type="text" class="form-control">
+              </div>
+         
+              <div class="form-group col-sm-4" style="padding-right: 5px;">
+                <label>User</label>
+                <input formControlName="user" type="text" class="form-control">
+              </div>
+            <div style="padding-right: 5px; margin-top: 25px;">
+                <button type="button" class="btn btn-primary" (click)="submit()">Scan</button>
+            </div>
+        </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Company</th>
-                <th scope="col">User</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let data of rows">
-                <th>{{data.CompanyName}}</th>
-                <td>{{data.user}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    </form>
+<app-chart-data [data]="responseData"></app-chart-data>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Company</th>
+            <th scope="col">User</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of rows">
+            <th>{{data.CompanyName}}</th>
+            <td>{{data.user}}</td>
+        </tr>
+    </tbody>
+</table>
